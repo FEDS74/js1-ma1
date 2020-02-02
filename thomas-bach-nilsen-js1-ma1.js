@@ -29,9 +29,8 @@ for(let i=0; i < p.length; i++){
 //question 6
 //answer question 6
 document.querySelector(".results").classList.add("resultsContainer");
-const newP = document.querySelector("div.resultsContainer");
+const newP = document.querySelector(".resultsContainer");
 newP.innerHTML = "<p>New paragraph</p>";
-
 
 //question 7
 //answer question 7
@@ -49,31 +48,32 @@ const cats = [
     }
 ];
 
+//question 10
+//answer question 10
+const resultsContainer = document.querySelector(".resultsContainer");
+let newHTML = "";
+
+//question 8, 9, 10
+//answer question 8, 9, 10
 function callArgument(catArray){
   for(let i=0; i < catArray.length; i++){
     console.log(catArray[i].name);
+
+
+    let ageValue = "Age unknown";
+    if(catArray[i].age){
+      ageValue = catArray[i].age;
+    }
+
+
+    const resultDetails = `<div>
+                            <h5>${catArray[i].name}</h5>
+                            <p>${ageValue}</p>
+                          </div>`;
+    newHTML += resultDetails;
+    resultsContainer.innerHTML = newHTML;
+
   }
 }
 
 callArgument(cats);
-
-
-//question 8
-//answer question 8
-    const name = "<h5>" + catArray[i].name + "</h5>";
-
-
-//question 9
-//answer question 9
-let newDiv = document.querySelector(".resultsContainer");
-const exsistingHTML = newDiv.innerHTML;
-newDiv.innerHTML = exsistingHTML + name;
-
-//question 10
-//answer question 10
-const secondDiv = document.createElement("div");
-document.body.appendChild(secondDiv);
-secondDiv.classList.add("secondDiv");
-
-    const secondDiv = document.querySelector("secondDiv");
-    secondDiv.innerHTML = ??????
